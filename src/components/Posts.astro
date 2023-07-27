@@ -1,0 +1,34 @@
+---
+// COMPONENTS
+import Card from "./Card.astro";
+// LOCAL DATA
+import { postsData } from "../data/posts.js";
+---
+
+<section class="posts">
+  {
+    postsData.map((card) => (
+      <Card
+        coverImage={card.coverImage}
+        title={card.title}
+        description={card.description}
+        avatar={card.avatar}
+        name={card.name}
+        position={card.position}
+      />
+    ))
+  }
+</section>
+
+<!-- STYLES  -->
+<style>
+  .posts {
+    padding-block: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 3rem;
+  }
+
+  /* @media (min-width: 768px) {
+  } */
+</style>

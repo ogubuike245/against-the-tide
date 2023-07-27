@@ -1,0 +1,28 @@
+---
+const today = new Date();
+---
+
+<footer>
+  <div class="logo">
+    <span>Gubi</span>
+  </div>
+  <p>&copy; {today.getFullYear()} All Copyrights Not Reserved</p>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--Black);
+  }
+
+  .logo span {
+    color: var(--Black);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 23px;
+  }
+</style>

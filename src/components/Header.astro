@@ -1,0 +1,130 @@
+---
+---
+
+<header>
+  <div class="logo">
+    <span> <a href="/">GUBI</a></span>
+  </div>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blogs">Blogs</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger">
+    <img src="/images/Hamburger-Menu.svg" alt="" />
+  </div>
+</header>
+
+<style>
+  header {
+    display: grid;
+    grid-template-areas:
+      "logo ................ hamburger"
+      "................  nav-list ................"
+      "................  nav-list ................";
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 30px 100px 100px;
+    gap: 1rem;
+    max-height: 50px;
+  }
+
+  .logo {
+    grid-area: logo;
+    width: 20px;
+    height: 20px;
+  }
+
+  .logo span {
+    color: var(--Black);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 23px;
+    cursor: pointer;
+  }
+  nav {
+    grid-area: nav-list;
+    transform: translateX(-300%);
+    width: 100%;
+    max-height: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  nav.active {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--Black);
+    transform: translateX(0%);
+    max-height: 200px;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  li {
+    color: var(--Grey);
+    list-style: none;
+    cursor: pointer;
+  }
+  li:last-child {
+    background-color: var(--Yellow);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--White);
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .hamburger {
+    grid-area: hamburger;
+    display: flex;
+    align-self: center;
+    background-color: var(--Black);
+    cursor: pointer;
+  }
+
+  @media (min-width: 578px) {
+    header {
+      grid-template-areas: "logo ................ nav-list";
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 70px;
+    }
+    nav {
+      transform: translateX(0);
+      max-height: 50px;
+      padding: 0;
+      width: 100%;
+    }
+    nav ul {
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: row;
+    }
+    li:last-child {
+      background-color: var(--Yellow);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      color: var(--White);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navList = document.querySelector("nav");
+
+  hamburger.addEventListener("click", () => {
+    navList.classList.toggle("active");
+  });
+</script>

@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+:root {
+  --Black: rgb(7, 3, 2);
+  --Yellow: rgb(200, 82, 23);
+  --Grey: rgb(101, 101, 101);
+  --White: rgba(255, 255, 255, 0.9);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  transition: all 0.5s ease;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  all: unset;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+main {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--White);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --Black: rgb(101, 101, 101);
+    --Grey: rgba(255, 255, 255, 0.9);
+    --White: rgb(7, 3, 2);
+  }
+}
