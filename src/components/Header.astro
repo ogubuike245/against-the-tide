@@ -3,7 +3,7 @@
 
 <header>
   <div class="logo">
-    <span> <a href="/">GUBI</a></span>
+    <span> <a href="/">Footy Yard</a></span>
   </div>
   <nav>
     <ul class="nav-list">
@@ -29,11 +29,12 @@
     grid-template-rows: 30px 100px 100px;
     gap: 1rem;
     max-height: 50px;
+    /* place-content: center; */
+    /* place-items: center; */
   }
 
   .logo {
     grid-area: logo;
-    width: 20px;
     height: 20px;
   }
 
@@ -41,8 +42,10 @@
     color: var(--Black);
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 23px;
+    font-size: 20px;
+    white-space: nowrap;
     cursor: pointer;
+    word-spacing: 0.5rem;
   }
   nav {
     grid-area: nav-list;
@@ -94,7 +97,9 @@
       grid-template-areas: "logo ................ nav-list";
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 70px;
+      place-items: center;
     }
+
     nav {
       transform: translateX(0);
       max-height: 50px;
